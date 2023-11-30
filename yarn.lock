@@ -4343,7 +4343,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sanity/vision@npm:^3.20.0":
+"@sanity/vision@npm:^3.20.2":
   version: 3.20.2
   resolution: "@sanity/vision@npm:3.20.2"
   dependencies:
@@ -13358,7 +13358,7 @@ __metadata:
     "@expo/vector-icons": ^13.0.0
     "@sanity/eslint-config-studio": ^3.0.1
     "@sanity/image-url": ^1.0.2
-    "@sanity/vision": ^3.20.0
+    "@sanity/vision": ^3.20.2
     "@types/node": ^20
     "@types/react": ^18
     "@types/react-dom": ^18
