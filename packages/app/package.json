@@ -1,0 +1,11 @@
+{
+  "version": "0.0.0",
+  "name": "app",
+  "main": "index.ts",
+  "dependencies": {
+    "moti": "latest",
+    "nativewind": "4.0.16",
+    "solito": "4.1.3"
+  },
+  "sideEffects": false
+}
