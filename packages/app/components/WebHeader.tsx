@@ -9,7 +9,8 @@ import { Footer } from '@expo/html-elements'
 import logoImg from '../../../apps/expo/assets/images/dyn-logo.png';
 import SideBar from './SideBar';
 import { MotiLink } from 'solito/moti'
-import { usePathname } from 'solito/navigation'
+//import { usePathname } from 'solito/navigation'
+import { usePathname } from 'next/navigation'
 
 const CustomHeader = remapProps(Header, {});
 
@@ -18,6 +19,8 @@ const CustomHeader = remapProps(Header, {});
             <Text className="headerLink">About</Text>
             <Text className="headerLink">Contact</Text>
             <Text className="headerLink">Shop</Text> */}
+
+
 
 const headerLinks: Array<{
   pathname: string
@@ -58,8 +61,8 @@ export function WebHeader() {
   let comments
   const items: number = 10
 
-  const pathname = usePathname()
   const { width, height } = useWindowDimensions();
+  const pathname = usePathname()
 
 
   return (

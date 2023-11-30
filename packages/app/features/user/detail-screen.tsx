@@ -5,7 +5,7 @@ import { useParams, useRouter, useSearchParams } from 'solito/navigation'
 
 const useUserParams = useParams<{ userId: string }>
 
-const UserDetailScreen = () => {
+export function UserDetailScreen() {
   //const [id] = useParam('id')
 
   const { userId } = useUserParams()
@@ -21,4 +21,3 @@ const UserDetailScreen = () => {
 }
 
 
-export default UserDetailScreen

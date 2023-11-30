@@ -8,7 +8,14 @@ const nextConfig = {
   // https://github.com/necolas/react-native-web/pull/2330
   // https://github.com/nandorojo/moti/issues/224
   // once that gets fixed, set this back to true
-  reactStrictMode: true,
+  reactStrictMode: false,
+  swcMinify: false,
+  experimental: {
+    optimizeCss: true,
+    legacyBrowsers: false,
+    scrollRestoration: true,
+    appDir: false,
+  },
   images: {
     disableStaticImages: true,
     dangerouslyAllowSVG: true,
