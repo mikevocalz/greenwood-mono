@@ -65,6 +65,7 @@ const nextConfig = {
     'react-native-reanimated-carousel',
     'react-responsive-carousel',
   ],
+
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.(ttf|png|jpg|jpeg|svg|pdf)$/,
@@ -92,17 +93,6 @@ const nextConfig = {
       '.web.tsx',
       ...config.resolve.extensions,
     ]
-
-    if (!config.plugins) {
-      config.plugins = []
-    }
-
-    // Expose __DEV__ from Metro.
-    config.plugins.push(
-      new DefinePlugin({
-        __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
-      }),
-    )
 
     return config
   },
