@@ -12,9 +12,7 @@ const nextConfig = {
   swcMinify: false,
   experimental: {
     optimizeCss: true,
-    legacyBrowsers: false,
     scrollRestoration: true,
-    appDir: false,
   },
   images: {
     disableStaticImages: true,
