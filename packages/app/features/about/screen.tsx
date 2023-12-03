@@ -1,22 +1,31 @@
-import { Text, View } from "react-native";
-import { vars } from "nativewind";
-import { TextLink } from "solito/link";
+import { Text, View } from 'react-native'
+import { MotiLink } from 'solito/moti/app'
 
-const theme = vars({
-  "--theme-rg": "blue",
-});
-
-
-const AboutScreen = () => {
-
+export function AboutScreen() {
   return (
-    <View className="flex-1 items-center min-h-screen self-center w-screen max-w-7xl  bg-green-200" style={theme}>
-      <Text className="font-bold text-3xl text-[--theme-fg] my-6">About !</Text>
+    <View className="flex-1 items-center justify-center p-3">
+      <Text className='Text=3xl'>About</Text>
 
-      <TextLink href="/user/fernando">Regular Link</TextLink>
 
+      <MotiLink
+        href="/user/fernando"
+        animate={({ hovered, pressed }) => {
+          'worklet'
+
+          return {
+            scale: pressed ? 0.95 : hovered ? 1.1 : 1,
+            rotateZ: pressed ? '0deg' : hovered ? '-3deg' : '0deg',
+          }
+        }}
+        transition={{
+          type: 'timing',
+          duration: 150,
+        }}
+      >
+        <Text selectable={false} className="text-base font-bold">
+          Moti Link
+        </Text>
+      </MotiLink>
     </View>
-  );
+  )
 }
-
-export default AboutScreen 

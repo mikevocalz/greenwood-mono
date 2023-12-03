@@ -76,3 +76,75 @@ body {
 
 
 
+
+
+@font-face {
+        font-family: 'EntypoFont';
+        src: url('/fonts/EntypoFont.ttf')
+}
+
+@font-face {
+    font-family: 'AntDesignFont';
+    src: url('/fonts/AntDesignFont.ttf')
+}
+@font-face {
+    font-family: 'EvilIconsFont';
+    src: url('/fonts/EvilIconsFont.ttf')
+}
+@font-face {
+    font-family: 'FeatherFont';
+    src: url('/fonts/FeatherFont.ttf')
+}
+
+@font-face {
+    font-family: 'FontAwesomeFont';
+    src: url('/fonts/FontAwesomeFont.ttf')
+}
+
+@font-face {
+    font-family: 'FoundationFont';
+    src: url('/fonts/FoundationFont.ttf')
+}
+
+
+@font-face {
+    font-family: 'IoniconsFont';
+    src: url('/fonts/IoniconsFont.ttf')
+}
+@font-face {
+    font-family: 'MaterialCommunityIconsFont';
+    src: url('/fonts/MaterialCommunityIconsFont.ttf')
+}
+@font-face {
+    font-family: 'MaterialIconsFont';
+    src: url('/fonts/MaterialIconsFont.ttf')
+}
+@font-face {
+    font-family: 'OcticonsFont';
+    src: url('/fonts/OcticonsFont.ttf')
+}
+
+@font-face {
+    font-family: 'SimpleLineIconsFont';
+    src: url('/fonts/SimpleLineIconsFont.ttf')
+}
+
+@font-face {
+    font-family: 'ZocialFont';
+    src: url('/fonts/ZocialFont.ttf')
+}
+
+@font-face {
+    font-family: 'MaterialIconsFont';
+    src: url('/fonts/MaterialIconsFont.ttf')
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins.ttf')
+}
+
+@font-face {
+    font-family: 'BebasNeue-Bold';
+    src: url('/fonts/BebasNeue-Bold.ttf')
+}

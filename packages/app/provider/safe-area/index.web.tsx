@@ -6,7 +6,7 @@
 // however, you may be better off using the CSS selector for env(safe-area-inset-top) on Web
 
 // for more, see the `./use-safe-area.web.ts` file
-
+'use client'
 export const SafeArea = ({ children }: { children: React.ReactElement }) => (
   <>{children}</>
 )

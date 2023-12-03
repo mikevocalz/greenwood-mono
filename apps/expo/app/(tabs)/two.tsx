@@ -1,5 +1,5 @@
-import CoursesScreen from 'app/features/courses/screen'
+'use client'
 
-export default function Two() {
-  return <CoursesScreen />
-}
+import { AboutScreen } from 'app/features/about/screen'
+
+export default AboutScreen

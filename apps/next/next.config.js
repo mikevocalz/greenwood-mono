@@ -9,7 +9,6 @@ const nextConfig = {
   // https://github.com/nandorojo/moti/issues/224
   // once that gets fixed, set this back to true
   reactStrictMode: false,
-  swcMinify: false,
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
@@ -46,33 +45,39 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   transpilePackages: [
-    'expo-router',
     'react-native',
     'react-native-web',
     'solito',
     'moti',
     'app',
     'react-native-reanimated',
-    'react-native-svg',
     'nativewind',
     'react-native-gesture-handler',
+       'expo-router',
+    'react-native-svg',
+    'nativewind',
     'react-native-css-interop',
     '@expo/html-elements',
     '@expo/vector-icons',
-    'react-native-vector-icons-for-web',
     'react-native-vector-icons',
     'styled-components',
     'react-native-reanimated-carousel',
     'react-responsive-carousel',
   ],
 
-  webpack: (config, options) => {
-    config.module.rules.push({
+
+webpack(config, options) {
+     config.module.rules.push({
       test: /\.(ttf|png|jpg|jpeg|svg|pdf)$/,
       loader: 'url-loader', // or directly file-loader
     })
 
-    config.resolve.alias = {
+    // Mix in aliases
+    if (!config.resolve) {
+      config.resolve = {}
+    }
+
+     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       // Alias direct react-native imports to react-native-web
       'react-native$': 'react-native-web',
@@ -83,16 +88,28 @@ const nextConfig = {
         'react-native-web/dist/vendor/react-native/emitter/EventEmitter',
       'react-native/Libraries/EventEmitter/NativeEventEmitter$':
         'react-native-web/dist/vendor/react-native/NativeEventEmitter',
-      '@expo/vector-icons': 'react-native-vector-icons-web',
+      '@expo/vector-icons': 'react-native-vector-icons',
       'react-native-webview': 'react-native-web-webview',
     }
+
     config.resolve.extensions = [
       '.web.js',
       '.web.jsx',
       '.web.ts',
       '.web.tsx',
-      ...config.resolve.extensions,
+      ...(config.resolve?.extensions ?? []),
     ]
+
+    if (!config.plugins) {
+      config.plugins = []
+    }
+
+    // Expose __DEV__ from Metro.
+    config.plugins.push(
+      new DefinePlugin({
+        __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
+      })
+    )
 
     return config
   },
