@@ -4,7 +4,7 @@ import 'setimmediate'
 import { Provider } from 'app/provider'
 import Head from 'next/head'
 import React from 'react'
-
+import WebLayout from 'app/layout/web'
 import '../global.css'
 import { AppProps } from 'next/app'
 
@@ -20,8 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Provider>
-
-        <Component {...pageProps} />
+        <WebLayout>
+          <Component {...pageProps} />
+        </WebLayout>
       </Provider>
     </>
   )
