@@ -3,8 +3,9 @@ import { ReactNode, ReactElement } from 'react'
 import { View, Text, useWindowDimensions } from 'react-native'
 import { WebHeader } from "app/components/WebHeader";
 import WebFooter from "app/components/WebFooter";
+import dynamic from "next/dynamic";
 
-export default function WebLayout({ children }): ReactElement<ReactNode> {
+function WebLayout({ children }): ReactElement<ReactNode> {
 
   return (
     <>
@@ -18,3 +19,5 @@ export default function WebLayout({ children }): ReactElement<ReactNode> {
 }
 
 
+
+export default dynamic(() => Promise.resolve(WebLayout), { ssr: false })

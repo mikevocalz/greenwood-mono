@@ -10,7 +10,6 @@ import logoImg from '../../../apps/expo/assets/images/dyn-logo.png';
 import SideBar from './SideBar';
 import { MotiLink } from 'solito/moti'
 import { usePathname } from 'solito/navigation'
-//import { usePathname } from 'next/navigation'
 
 const CustomHeader = remapProps(Header, {});
 
@@ -155,3 +154,5 @@ export function WebHeader() {
     </Header>
   )
 }
+
+
