@@ -66,7 +66,7 @@ export function WebHeader() {
 
   return (
     <Header className='headingNav' style={{ zIndex: 1000, position: 'sticky', left: 0, right: 0, top: 0 }}>
-      <View className='sticky border-b-[0.5px] border-black left-0 top-0 right-0 z-30 flex w-full items-center justify-center bg-zinc-100  h-[80px] '>
+      <View className='sticky flex-1 w-full border-b-[0.5px] border-black left-0 top-0 right-0 z-30 flex w-full items-center justify-center bg-zinc-100  h-[80px] '>
         <View className=' flex-row w-screen max-w-7xl pr-2 justify-between'>
           <View className="flex items-center justify-center ml-2 ">
             <Link href="/">
@@ -93,7 +93,6 @@ export function WebHeader() {
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: 30,
 
             }}  >
             {/* // className="hidden flex-1 flex-row items-center justify-center space-x-8 md:flex"> */}

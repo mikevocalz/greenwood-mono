@@ -10,7 +10,7 @@ function WebLayout({ children }): ReactElement<ReactNode> {
   return (
     <>
       <WebHeader />
-      <View className="self-center  h-full w-screen bg-white ">
+      <View className="relative self-center  h-full w-screen bg-red-100 ">
         {children}
       </View>
       <WebFooter />

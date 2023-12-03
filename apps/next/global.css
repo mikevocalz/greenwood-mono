@@ -20,11 +20,15 @@
     }
 }
 
+
+
 /**
  * Building on the RNWeb reset:
  * https://github.com/necolas/react-native-web/blob/master/packages/react-native-web/src/exports/StyleSheet/initialRules.js
  */
-html, body, #__next {
+html,
+body,
+#__next {
     width: 100%;
     /* To smooth any scrolling behavior */
     -webkit-overflow-scrolling: touch;
@@ -32,14 +36,7 @@ html, body, #__next {
     padding: 0px;
     /* Allows content to fill the viewport and go beyond the bottom */
     min-height: 100%;
- background-color: white;
-}
-.headingNav {
-    position: sticky;
-    top: 0;
-    right: 0;
-    left:0;
-    z-index: 1000;
+        background-color: aquamarine;
 }
 
 #__next {
@@ -49,6 +46,7 @@ html, body, #__next {
     flex-grow: 1;
     display: flex;
     flex: 1;
+    
 }
 
 html {
@@ -66,85 +64,4 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -ms-overflow-style: scrollbar;
-    -ms-overflow-style: none;
-        /* IE and Edge */
-        scrollbar-width: none;
-        /* Firefox */
-        overflow-x: hidden;
-    
-}
-
-
-
-
-
-@font-face {
-        font-family: 'EntypoFont';
-        src: url('/fonts/EntypoFont.ttf')
-}
-
-@font-face {
-    font-family: 'AntDesignFont';
-    src: url('/fonts/AntDesignFont.ttf')
-}
-@font-face {
-    font-family: 'EvilIconsFont';
-    src: url('/fonts/EvilIconsFont.ttf')
-}
-@font-face {
-    font-family: 'FeatherFont';
-    src: url('/fonts/FeatherFont.ttf')
-}
-
-@font-face {
-    font-family: 'FontAwesomeFont';
-    src: url('/fonts/FontAwesomeFont.ttf')
-}
-
-@font-face {
-    font-family: 'FoundationFont';
-    src: url('/fonts/FoundationFont.ttf')
-}
-
-
-@font-face {
-    font-family: 'IoniconsFont';
-    src: url('/fonts/IoniconsFont.ttf')
-}
-@font-face {
-    font-family: 'MaterialCommunityIconsFont';
-    src: url('/fonts/MaterialCommunityIconsFont.ttf')
-}
-@font-face {
-    font-family: 'MaterialIconsFont';
-    src: url('/fonts/MaterialIconsFont.ttf')
-}
-@font-face {
-    font-family: 'OcticonsFont';
-    src: url('/fonts/OcticonsFont.ttf')
-}
-
-@font-face {
-    font-family: 'SimpleLineIconsFont';
-    src: url('/fonts/SimpleLineIconsFont.ttf')
-}
-
-@font-face {
-    font-family: 'ZocialFont';
-    src: url('/fonts/ZocialFont.ttf')
-}
-
-@font-face {
-    font-family: 'MaterialIconsFont';
-    src: url('/fonts/MaterialIconsFont.ttf')
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins.ttf')
-}
-
-@font-face {
-    font-family: 'BebasNeue-Bold';
-    src: url('/fonts/BebasNeue-Bold.ttf')
 }

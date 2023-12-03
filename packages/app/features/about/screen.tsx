@@ -5,6 +5,7 @@ export function AboutScreen() {
   return (
     <View className="flex-1 items-center justify-center p-3">
       <Text className='Text=3xl'>About</Text>
+      <View className="flex items-center justify-center p-3 bg-orange-500 w-2/3 h-1/2 " />
 
 
       <MotiLink

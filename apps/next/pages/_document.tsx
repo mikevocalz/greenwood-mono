@@ -25,6 +25,7 @@ const customFontCss = fonts
   .join('\n')
 export const style = `
 ${customFontCss}
+
 `
 
 class Document extends NextDocument {
@@ -59,7 +60,7 @@ class Document extends NextDocument {
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         </Head>
-        <body className="scrollbar-thin scrollbar-thumb-red-800 scrollbar-track-red-500 scrollbar-thumb-rounded-full scrollbar-track-rounded-full h-32 overflow-y-scroll bg-white">
+        <body className="scrollbar-thin scrollbar-thumb-red-800 scrollbar-track-red-600 scrollbar-thumb-rounded-full scrollbar-track-rounded-full h-32 overflow-y-scroll bg-white">
           <Main />
           <NextScript />
         </body>
