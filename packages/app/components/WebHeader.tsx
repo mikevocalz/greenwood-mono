@@ -68,7 +68,7 @@ export function WebHeader() {
     <Header className='headingNav' style={{ zIndex: 1000, position: 'sticky', left: 0, right: 0, top: 0 }}>
       <View className='sticky flex-1 w-full border-b-[0.5px] border-black left-0 top-0 right-0 z-30 flex w-full items-center justify-center bg-zinc-100  h-[80px] '>
         <View className=' flex-row w-screen max-w-7xl pr-2 justify-between'>
-          <View className="flex items-center justify-center ml-2 ">
+          <View className="flex items-center justify-center ml-1 ">
             <Link href="/">
               <Pressable className="relative h-[70px]  cursor-pointer transition hover:opacity-90">
                 <SolitoImage
@@ -78,9 +78,9 @@ export function WebHeader() {
                   height={200}
                   contentFit={'contain'}
                   style={{
-                    marginLeft: 4,
-                    width: 190,
-                    height: 76
+
+                    width: 180,
+                    height: 74
                   }}
                   priority
                 />
@@ -119,6 +119,7 @@ export function WebHeader() {
                     type: 'timing',
                     duration: 150,
                   }}
+                  style={{ marginHorizontal: 8 }}
                 >
                   <Text className={`hidden md:flex text-[26px] stroke-red-600 tracking-wide leading-10 uppercase font-[Bebas-Regular] ${active ? 'text-black text-[28px]' : 'text-zinc-700'}`} >{headerLink.name}</Text>
                 </MotiLink>
@@ -131,7 +132,7 @@ export function WebHeader() {
           <View className="flex items-center flex-row justify-center ">
 
             <Link href="/checkout">
-              <View className="relative cursor-pointer mr-[20px]">
+              <View className="relative cursor-pointer mr-[2px]">
                 {/* {items.length > 0 && ( */}
                 <Text className="absolute right-2 -top-1 z-50 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-red-900 text-[10px] font-bold text-white">
                   {/* {items.length} */}
