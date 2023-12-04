@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 function WebLayout({ children }): ReactElement<ReactNode> {
 
   return (
-    <View className="relative self-center flex-col  min-h-full w-screen overflow-y-hidden ">
+    <View className="relative self-center flex-col min-h-full w-screen overflow-y-hidden ">
       <WebHeader />
       {children}
     </View>

@@ -36,7 +36,7 @@ body,
     padding: 0px;
     /* Allows content to fill the viewport and go beyond the bottom */
     min-height: 100%;
-    background-color: aquamarine;
+    background-color: white;
 }
 
 #__next {

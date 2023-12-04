@@ -129,7 +129,7 @@ function HomeScreen() {
       scrollEnabled
       style={styles.scrollView}
       contentContainerStyle={styles.contentContainer}
-      className={` ${!isWeb ? ' h-screen' : 'mt-[80px]'} self-center h-full bg-red-500  max-w-7xl  min-w-screen `}
+      className={` ${!isWeb ? ' h-screen' : 'mt-[80px]'} self-center h-full  max-w-7xl  min-w-screen `}
     >
 
 
@@ -258,7 +258,7 @@ function HomeScreen() {
             //gap: 16,
             paddingRight: 300
           }}
-          className="flex py-10 space-x-8 w-full max-h-[730px] pb-[120px]  bg-red-900">
+          className="flex py-10 space-x-8 w-full max-h-[730px] pb-[120px] ">
 
           <CourseCard />
           <CourseCard />
@@ -286,7 +286,7 @@ function HomeScreen() {
             //gap: 16,
 
           }}
-          className="flex py-10 space-x-8 w-full max-h-[730px] pb-[120px]  bg-blue-900">
+          className="flex py-10 space-x-8 w-full max-h-[730px] pb-[120px]  bg-white">
 
 
         </View>
