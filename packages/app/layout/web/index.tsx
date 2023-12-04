@@ -17,4 +17,4 @@ function WebLayout({ children }): ReactElement<ReactNode> {
 
 
 
-export default dynamic(() => Promise.resolve(WebLayout), { ssr: true })
+export default dynamic(() => Promise.resolve(WebLayout), { ssr: false })

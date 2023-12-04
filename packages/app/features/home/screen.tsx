@@ -129,7 +129,7 @@ function HomeScreen() {
       scrollEnabled
       style={styles.scrollView}
       contentContainerStyle={styles.contentContainer}
-      className={` ${!isWeb ? ' h-screen' : ''} self-center h-full bg-red-500  max-w-7xl  min-w-screen `}
+      className={` ${!isWeb ? ' h-screen' : 'mt-[80px]'} self-center h-full bg-red-500  max-w-7xl  min-w-screen `}
     >
 
 
@@ -197,7 +197,7 @@ function HomeScreen() {
 
 
           </>
-          : <View className="flex w-full max-h-[466px]">
+          : <View className="flex w-full max-h-[476px]">
             <WebCarousel
               showArrows
               showIndicators
@@ -213,7 +213,7 @@ function HomeScreen() {
                 <SolitoImage
                   key={id}
                   priority
-                  height={466}
+                  height={476}
                   width={pWidth}
                   contentFit="cover"
                   alt={photo.id.toString()}
@@ -222,8 +222,8 @@ function HomeScreen() {
                   style={{
                     flex: 1,
                     maxWidth: 1280,
-                    maxHeight: 466,
-                    aspectRatio: 16 / 8,
+                    maxHeight: 476,
+                    aspectRatio: 16 / 9,
                   }}
                 />
 
