@@ -7,11 +7,11 @@ const theme = vars({
 });
 
 
-const AboutScreen = () => {
+export function ContactScreen() {
 
   return (
     <View className="flex-1 items-center min-h-screen self-center w-screen max-w-7xl  bg-green-200" style={theme}>
-      <Text className="font-bold text-3xl text-[--theme-fg] my-6">About !</Text>
+      <Text className="font-bold text-3xl text-[--theme-fg] my-6">Contact!</Text>
 
       <TextLink href="/user/fernando">Regular Link</TextLink>
 
@@ -19,4 +19,3 @@ const AboutScreen = () => {
   );
 }
 
-export default AboutScreen 

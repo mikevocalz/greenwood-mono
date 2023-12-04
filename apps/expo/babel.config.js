@@ -9,6 +9,15 @@ module.exports = function (api) {
         },
       ],
       "nativewind/babel",
+      [
+        'module-resolver',
+        {
+          root: ['./'],
+          alias: {
+            'solito/image': 'solito/image/expo',
+          },
+        },
+      ]
     ],
     plugins: [
       // Required for expo-router
