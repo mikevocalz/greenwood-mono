@@ -8,16 +8,13 @@ import dynamic from "next/dynamic";
 function WebLayout({ children }): ReactElement<ReactNode> {
 
   return (
-    <>
+    <View className="relative self-center flex-col  min-h-full w-screen overflow-y-hidden ">
       <WebHeader />
-      <View className="relative flex self-center  min-h-full w-screen bg-red-100 overflow-x-hidden ">
-        {children}
-      </View>
-      <WebFooter />
-    </>
+      {children}
+    </View>
   )
 }
 
 
 
-export default dynamic(() => Promise.resolve(WebLayout), { ssr: false })
+export default dynamic(() => Promise.resolve(WebLayout), { ssr: true })

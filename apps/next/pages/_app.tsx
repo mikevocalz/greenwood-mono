@@ -5,8 +5,11 @@ import { Provider } from 'app/provider'
 import Head from 'next/head'
 import React from 'react'
 import WebLayout from 'app/layout/web'
-import '../global.css'
+import '../global.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 import { AppProps } from 'next/app'
+import WebFooter from 'app/components/WebFooter'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -23,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <WebLayout>
           <Component {...pageProps} />
         </WebLayout>
+        <WebFooter />
       </Provider>
     </>
   )

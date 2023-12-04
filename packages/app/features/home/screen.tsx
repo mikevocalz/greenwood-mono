@@ -52,6 +52,8 @@ const photos = [
   }
 ]
 
+const isWeb = Platform.OS === 'web'
+
 function HomeScreen() {
   const [pagingEnabled, setPagingEnabled] = useState<boolean>(true);
   const [snapEnabled, setSnapEnabled] = useState<boolean>(true);
@@ -119,26 +121,18 @@ function HomeScreen() {
 
 
   return (
-    <ScrollView
+    <ScreenScrollView
+      // useWindowScrolling
       showsHorizontalScrollIndicator={false}
-      showsVerticalScrollIndicator={false}
-      contentInsetAdjustmentBehavior='automatic'
-      //useWindowScrolling
-      scrollEnabled={true}
-      nestedScrollEnabled={true}
-      keyboardShouldPersistTaps="always"
-      //pagingEnabled={true}
-      contentContainerStyle={{
-        // alignItems: 'center',
-        //height: Platform.OS === 'web' ? '100%' : undefined,
-        paddingBottom: 300,
-      }}
-
-      className="flex-1 self-center bg-orange-200 overflow-y-scroll h-screen  w-full max-w-7xl "
-    // style={{
-    //   height: Platform.OS === 'web' ? '100vh' : '100%'
-    // }}
+      contentInsetAdjustmentBehavior='always'
+      nestedScrollEnabled
+      scrollEnabled
+      style={styles.scrollView}
+      contentContainerStyle={styles.contentContainer}
+      className={` ${!isWeb ? ' h-screen' : ''} self-center h-full bg-red-500  max-w-7xl  min-w-screen `}
     >
+
+
       <Fragment>
         {Platform.OS !== 'web' ?
           <>
@@ -203,7 +197,7 @@ function HomeScreen() {
 
 
           </>
-          : <>
+          : <View className="flex w-full max-h-[466px]">
             <WebCarousel
               showArrows
               showIndicators
@@ -212,7 +206,8 @@ function HomeScreen() {
               showStatus={false}
               dynamicHeight={true}
               infiniteLoop
-              width={'100%'} swipeable>
+              width={'100%'}
+              swipeable>
 
               {photos.map((photo, id) => (
                 <SolitoImage
@@ -238,7 +233,7 @@ function HomeScreen() {
 
 
             </WebCarousel>
-          </>
+          </View>
         }
       </Fragment>
       <Section style={{
@@ -297,27 +292,25 @@ function HomeScreen() {
         </View>
       </Section>
 
-      {/* <SolitoImage
-        priority
-        height={466}
-        width={pWidth}
-        contentFit="cover"
-        alt={'cpr image'}
-        src={'https://images.pexels.com/photos/6520169/pexels-photo-6520169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
-        contentPosition={{ top: '25%', left: '50%' }}
-        style={{
-          maxWidth: 1280,
-          maxHeight: 466,
-
-        }}
-      /> */}
 
 
 
 
 
-    </ScrollView>
+    </ScreenScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1,
+    height: '100%',
+    width: '100%',
+  },
+  contentContainer: {
+    // alignItems: 'center',
+    //paddingBottom: Platform.OS === 'web' ? 500 : 140
+  }
+})
 
 export default HomeScreen;
