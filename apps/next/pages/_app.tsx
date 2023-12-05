@@ -15,10 +15,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Solito Example App</title>
+        <title>Dynamic Phlebotomy & CPR</title>
         <meta
           name="description"
-          content="Expo + Next.js with Solito. By Fernando Rojo."
+          content="Discover excellence in healthcare training with our Phlebotomy and CPR courses. Empower yourself with essential skills in blood collection and life-saving techniques. Join us to become a certified professional ready to make a difference in patient care. Enroll now for comprehensive training, expert instructors, and a pathway to a rewarding career in healthcare"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
