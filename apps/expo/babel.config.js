@@ -7,9 +7,13 @@ module.exports = function (api) {
         {
           jsxImportSource: "nativewind",
         },
-      ],
-      "nativewind/babel",
-      [
+      ]
+    ],
+    plugins: [
+      // Required for expo-router
+      "expo-router/babel",
+      "react-native-reanimated/plugin",
+       [
         'module-resolver',
         {
           root: ['./'],
@@ -17,12 +21,7 @@ module.exports = function (api) {
             'solito/image': 'solito/image/expo',
           },
         },
-      ]
+      ],
     ],
-    plugins: [
-      // Required for expo-router
-      "expo-router/babel",
-      "react-native-reanimated/plugin",
-    ],
-  };
-};
+  }
+}

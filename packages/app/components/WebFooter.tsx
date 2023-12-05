@@ -58,8 +58,8 @@ const WebFooter = () => {
 
         <hr className="my-0 border-red-700 sm:mx-auto  lg:my-8" />
 
-        <div className="px-4 py-3 bg-black flex items-center justify-center flex-wrap break-words">
-          <span className="font-bold  text-sm text-gray-300 sm:text-center">© 2024  <a href="https://www.dynamicphlebotomycpr.org" className="mx-2 tracking-wider ">Dynamic Phlebotomy & CPR.</a>  All Rights Reserved.
+        <div className="px-4 py-3 text-center bg-black flex  items-center justify-center  flex-wrap ">
+          <span className="font-bold flex-wrap text-sm text-gray-300 px-6 sm:text-center">© 2024  <a href="https://www.dynamicphlebotomycpr.org" className="mx-2 tracking-wider ">Dynamic Phlebotomy & CPR. </a> <br className='sm:hidden' /><a> All Rights Reserved.</a>
           </span>
         </div>
       </div>

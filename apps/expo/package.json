@@ -4,7 +4,7 @@
   "private": true,
   "name": "expo-app",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --clear --go",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -53,7 +53,10 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.14",
+    "babel-loader": "^9.1.2",
+    "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-react-native-web": "^0.19.9",
+    "babel-preset-expo": "^9.3.1",
     "jest": "^29.2.1",
     "jest-expo": "~49.0.0",
     "react-native-svg-transformer": "1.1.0",

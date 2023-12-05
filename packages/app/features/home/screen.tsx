@@ -14,6 +14,7 @@ import { Carousel as WebCarousel } from 'react-responsive-carousel';
 import { Section } from '@expo/html-elements';
 import { ScreenScrollView } from 'app/components/ScreenScrollView';
 import CourseCard from "app/components/CourseCard";
+import { TestimonySection } from "app/components/TestimonySection";
 const theme = vars({
   "--theme-fg": "red",
 });
@@ -129,7 +130,7 @@ function HomeScreen() {
       scrollEnabled
       style={styles.scrollView}
       contentContainerStyle={styles.contentContainer}
-      className={` ${!isWeb ? ' h-screen' : 'mt-[80px]'} self-center h-full  max-w-7xl  min-w-screen `}
+      className={` ${!isWeb ? ' h-screen' : 'mt-[80px]'} self-center h-full  max-w-7xl  min-w-screen pb-[300px] `}
     >
 
 
@@ -240,9 +241,9 @@ function HomeScreen() {
         width: '100%',
         // height: '100%',
         //backgroundColor: 'red',
-        //padding: 16,
       }}>
-        <Text className="my-[80px] mb-4 text-3xl font-bold text-center text-gray-900">Courses</Text>
+        <Text className="self-center text-center mt-[100px] my-8 max-w-[500px] leading-lose text-4xl font-bold  text-gray-900 sm:text-5xl">
+          Courses</Text>
         <ScrollView
           horizontal
           centerContent
@@ -250,20 +251,21 @@ function HomeScreen() {
           //scrollEnabled
           contentContainerStyle={{
             paddingRight: 100,
-            paddingBottom: 40,
+            paddingBottom: 200,
+
             //maxHeight: 460,
             //overflow: 'scroll',
           }}
           style={{
             //gap: 16,
-            paddingRight: 300
+            paddingRight: 300,
           }}
-          className="flex py-10 space-x-8 w-full max-h-[730px] pb-[120px] ">
+          className="flex py-10 pl-4 space-x-8 max-w-7xl w-full max-h-[730px]">
 
           <CourseCard />
           <CourseCard />
           <CourseCard />
-          <Pressable className="flex w-[1/3] max-h-[460px] items-center justify-center mx-8 p-6 rounded-xl bg-amber-500 ">
+          <Pressable className="flex w-[1/3] max-h-[460px] items-center justify-center mx-8 p-6 rounded-xl bg-red-950 ">
             <Text className="block text-2xl font-bold leading-snug tracking-normal text-white antialiased">View More</Text>
           </Pressable>
         </ScrollView>
@@ -273,28 +275,11 @@ function HomeScreen() {
 
 
 
-      <Section style={{
-        width: '100%',
-        // height: '100%',
-        //backgroundColor: 'red',
-        //padding: 16,
-      }}>
-        <Text className="my-[80px] mb-4 text-3xl font-bold text-center text-gray-900">Testimonials</Text>
-        <View
-
-          style={{
-            //gap: 16,
-
-          }}
-          className="flex py-10 space-x-8 w-full max-h-[730px] pb-[120px]  bg-white">
-
-
-        </View>
-      </Section>
 
 
 
 
+      <TestimonySection />
 
 
     </ScreenScrollView>

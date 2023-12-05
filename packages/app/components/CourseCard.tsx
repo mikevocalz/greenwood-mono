@@ -3,6 +3,8 @@ import React from 'react'
 import { View, Text, Pressable } from 'react-native';
 import Article from '@expo/html-elements'
 import { SolitoImage } from 'solito/image'
+import { MotiPressable } from 'moti/interactions';
+
 
 interface CourseCardProps {
   uri?: string;
@@ -12,7 +14,29 @@ interface CourseCardProps {
 
 const CourseCard = ({ name, uri, descr }: CourseCardProps) => {
   return (
-    <Pressable className="flex w-full mx-8 pb-6 overflow-hidden max-h-[460px] min-w-[260px] max-w-[360px] rounded-xl bg-zinc-100 ">
+    <MotiPressable
+      animate={({ hovered, pressed }) => {
+        'worklet'
+        return {
+          scale: pressed ? 0.9 : hovered ? 1.05 : 1,
+        }
+      }}
+
+      style={{
+        display: 'flex',
+        width: '100%',
+        marginHorizontal: 20,
+        paddingBottom: 10,
+        overflow: 'hidden',
+        maxHeight: 460,
+        minWidth: 260,
+        maxWidth: 360,
+        backgroundColor: '#fafafa',
+        borderRadius: 20,
+      }}
+    // className="flex w-full mx-8 pb-6 overflow-hidden max-h-[460px] min-w-[260px] max-w-[360px] rounded-xl bg-zinc-100 "
+    >
+
       <SolitoImage
         width={500}
         height={300}
@@ -47,12 +71,12 @@ const CourseCard = ({ name, uri, descr }: CourseCardProps) => {
 
 
         <Pressable
-          className="my-10 w-full  rounded-full bg-amber-800 py-3 px-7  text-sm font-bold uppercase text-white "
+          className="my-10 w-full  rounded-full bg-red-700 py-3 px-7  text-sm font-bold uppercase text-white "
         >
           <Text className='text-lg text-center font-extrabold text-white'>Read More</Text>
         </Pressable>
       </View>
-    </Pressable>
+    </MotiPressable>
   )
 }
 

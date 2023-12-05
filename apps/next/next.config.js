@@ -34,6 +34,11 @@ const nextConfig = {
         hostname: 'images.pexels.com',
         port: '',
       },
+            {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+      },
       {
         protocol: 'https',
         hostname: 'static.wixstatic.com',
@@ -100,16 +105,7 @@ webpack(config, options) {
       ...(config.resolve?.extensions ?? []),
     ]
 
-    if (!config.plugins) {
-      config.plugins = []
-    }
 
-    // Expose __DEV__ from Metro.
-    config.plugins.push(
-      new DefinePlugin({
-        __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
-      })
-    )
 
     return config
   },
