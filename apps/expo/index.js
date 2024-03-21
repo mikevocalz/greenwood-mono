@@ -1,3 +1,5 @@
+import "expo-router/entry";
+
 import ReactNativeFeatureFlags from "react-native/Libraries/ReactNative/ReactNativeFeatureFlags";
 
 // enable the JS-side of the w3c PointerEvent implementation
@@ -8,4 +10,3 @@ ReactNativeFeatureFlags.shouldEmitW3CPointerEvents = () => true;
 ReactNativeFeatureFlags.shouldPressibilityUseW3CPointerEventsForHover = () =>
   true;
 
-import "expo-router/entry";

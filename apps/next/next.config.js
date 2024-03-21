@@ -1,5 +1,6 @@
 const { withExpo } = require('@expo/next-adapter')
 const { DefinePlugin } = require('webpack')
+  const { withGluestackUI } = require('@gluestack/ui-next-adapter');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,6 +9,15 @@ const nextConfig = {
   // https://github.com/necolas/react-native-web/pull/2330
   // https://github.com/nandorojo/moti/issues/224
   // once that gets fixed, set this back to true
+    async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/login",
+        permanent: false,
+      },
+    ];
+  },
   reactStrictMode: false,
   experimental: {
     optimizeCss: true,
@@ -58,7 +68,7 @@ const nextConfig = {
     'react-native-reanimated',
     'nativewind',
     'react-native-gesture-handler',
-       'expo-router',
+    'expo-router',
     'react-native-svg',
     'nativewind',
     'react-native-css-interop',
@@ -68,6 +78,11 @@ const nextConfig = {
     'styled-components',
     'react-native-reanimated-carousel',
     'react-responsive-carousel',
+    '@gluestack-ui/themed', 
+    '@gluestack-style/react',
+    'expo-linear-gradient',
+    '@gluestack-ui/nativewind-utils',
+    'react-native-table-component'
   ],
 
 
@@ -111,4 +126,5 @@ webpack(config, options) {
   },
 }
 
-module.exports = withExpo(nextConfig)
+//module.exports = withExpo(nextConfig)
+  module.exports = withGluestackUI(nextConfig);

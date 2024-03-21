@@ -2,7 +2,11 @@ import { View, Text, } from "react-native"
 import { Section, BlockQuote } from '@expo/html-elements'
 import SVGStar from "./SVGStars"
 import { SolitoImage } from 'solito/image'
+import { remapProps } from "nativewind"
 
+
+
+const RNSection = remapProps(Section, { className: "style" });
 
 const testimonials = [
   {
@@ -47,12 +51,13 @@ const testimonials = [
 export function TestimonySection() {
   return (
     <Section
-      style={{
-        flex: 1,
-        backgroundColor: '#fafafa',
-        width: '100%',
-        paddingBottom: 200
-      }}
+      className="flex  relative w-full bg-zinc-100 pb-[200px]"
+    // style={{
+    //   flex: 1,
+    //   //backgroundColor: '#fafafa',
+    //   width: '100%',
+    //   paddingBottom: 200
+    // }}
     >
 
 
@@ -61,7 +66,7 @@ export function TestimonySection() {
           Read Trusted Reviews From Our Students
         </Text>
 
-        <View className="mt-8 mx-8 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+        <View className="mt-8 mx-8 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-14 lg:gap-20">
           {testimonials.map((testimony, i) => {
             return (
               <View key={i} className="mb-8 rounded-xl  min-w-[300px] p-4 bg-red-50">

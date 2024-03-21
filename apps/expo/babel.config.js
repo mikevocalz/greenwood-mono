@@ -1,3 +1,6 @@
+const path = require('path');
+const gluestackStyleResolver = require('@gluestack-style/babel-plugin-styled-resolver');
+
 module.exports = function (api) {
   api.cache(true);
   return {
@@ -10,9 +13,12 @@ module.exports = function (api) {
       ]
     ],
     plugins: [
-      // Required for expo-router
-      "expo-router/babel",
-      "react-native-reanimated/plugin",
+      [
+        gluestackStyleResolver,
+        {
+          configPath: path.resolve(__dirname, './gluestack-style.config.js'), // Specify the path of the config file
+        },
+      ],
        [
         'module-resolver',
         {
@@ -22,6 +28,7 @@ module.exports = function (api) {
           },
         },
       ],
+      "react-native-reanimated/plugin",
     ],
   }
 }

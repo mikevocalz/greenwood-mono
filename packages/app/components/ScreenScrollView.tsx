@@ -4,7 +4,7 @@ type Props = React.ComponentProps<typeof ScrollView> & {
   useWindowScrolling?: boolean
 }
 
-export function ScreenScrollView({
+function ScreenScrollView({
   useWindowScrolling = true, // defaults to true
   ...props
 }: Props) {
@@ -15,3 +15,6 @@ export function ScreenScrollView({
 
   return <Component {...props} />
 }
+
+
+export default ScreenScrollView

@@ -24,7 +24,7 @@ const ButtonLink = ({ children, href, as, active, onPress }: ButtonLinkProps) =>
       'worklet'
 
       return {
-        scale: pressed ? 0.9 : hovered ? 1.2 : 1,
+        scale: pressed ? 0.98 : hovered ? 1.03 : 1,
       }
     }}
 
@@ -79,7 +79,7 @@ const SideBar: FC<any> = (props) => {
           className="flex text-4xl items-center cursor-pointer fixed right-2 top-[20px] z-50 "
           onClick={() => setShowSidebar(!showSidebar)}
         >
-          <Icon name="close" size={40} color="#b91c1c" />
+          <Icon name="close" size={40} color="#fff" />
           {/*  */}
         </View>
       ) : (
@@ -87,7 +87,7 @@ const SideBar: FC<any> = (props) => {
           onClick={() => setShowSidebar(!showSidebar)}
           className="z-60 flex items-center cursor-pointer right-0 top-13"
         >
-          <Icon name="menu" size={40} color="#000" />
+          <Icon name="menu" size={38} color="#fff" />
         </View>
       )}
 
@@ -98,7 +98,7 @@ const SideBar: FC<any> = (props) => {
       >
         <View
 
-          className="flex-1 px-[100px] items-start z-30 w-screen min-h-full opacity-100 border-l-[0.5px] ease-in-out duration-400  border-black max-w-[400px] bg-white p-10 pt-[130px] top-0 right-0 bottom-0 fixed"
+          className="flex-1   z-30 w-screen min-h-full opacity-100 border-l-[0.5px] ease-in-out duration-400  border-black max-w-[400px] bg-black  pt-[130px]  top-0 right-0 bottom-0 fixed"
         // style={{
         //   width: '7%',
         //   gap: 8,
@@ -107,17 +107,20 @@ const SideBar: FC<any> = (props) => {
         >
 
           {buttons.map((button) =>
-            <ButtonLink
-              key={button.id}
-              active={active === button.id}
-              href={button.href}
-              onPress={() => {
-                setActive(button.id);
-                setShowSidebar(!showSidebar);
-              }}
-            >
-              <Text className={`font-[BebasNeue-Bold] mt-1 py-2 ${active === button.id ? 'text-red-700 text-[26px]' : 'text-black'} font-black text-2xl uppercase`}>{button.name}</Text>
-            </ButtonLink>
+            <>
+              <ButtonLink
+                key={button.id}
+                active={active === button.id}
+                href={button.href}
+                onPress={() => {
+                  setActive(button.id);
+                  setShowSidebar(!showSidebar);
+                }}
+              >
+                <Text className={`font-[BebasNeue-Bold] ml-[70px] mt-1 py-2 ${active === button.id ? 'text-[#1F9081] ' : 'text-white'} font-black text-2xl uppercase`}>{button.name}</Text>
+              </ButtonLink>
+              <View className="bg-white h-[0.3px] min-w-[100vh]" />
+            </>
           )}
         </View>
       </View>

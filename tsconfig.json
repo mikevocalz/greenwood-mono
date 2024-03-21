@@ -3,7 +3,9 @@
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
-      "app/*": ["./packages/app/*"]
+      "app/*": ["./packages/app/*"],
+      "@components/*":["./packages/app/components"],
+      "@assets/*": ["./apps/expo/assets"]
     },
     "jsx": "react-jsx"
   },
