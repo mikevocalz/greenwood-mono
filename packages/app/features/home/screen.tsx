@@ -70,6 +70,37 @@ export function HomeScreen() {
 
   const loanEligibility = determineLoanEligibility(user);
 
+  function onPress(value, price,) {
+    if (Platform.OS === 'web') {
+      return (
+        window.alert(`This is column ${value}, ${price} `)
+
+
+      )
+    } else {
+      return (
+        Alert.alert(`This is column ${value}`)
+        //determineLoanEligibility(user)
+      )
+    }
+  }
+
+
+  function ElementButton(value: string, price: string): JSX.Element {
+    return (
+      <>
+        {value === 'Purchase' ?
+          <Pressable onPress={() => onPress(value, price)}
+            className="hover:opacity-85 flex ml-8 w-[90px] h-[28px] rounded-md bg-green-800 px-2 items-center justify-center">
+            <Text className="text-white font-semibold text-xs text-center">
+              PrepPay</Text>
+          </Pressable>
+          :
+          <View className='w-[100px] h-[24px]' />
+        }
+      </>
+    )
+  };
 
   return (
     <ScreenScrollView
@@ -132,7 +163,7 @@ export function HomeScreen() {
           {/* End of Feature */}
 
 
-          <View className="flex w-full flex-row justify-between md:px-10  px-0 mb-8">
+          <View className="flex w-full flex-row flex-wrap gap-y-4 justify-between md:px-10  px-0 mb-8">
             <Text className="md:text-lg font-bold text-black">Latest Spending Account Transactions (...{user.account.rouingNum.slice(-4)})</Text>
             <Pressable
               className=" hover:opacity-[0.7] items-center flex-row">
@@ -141,9 +172,7 @@ export function HomeScreen() {
           </View>
 
 
-          <View style={{
-            paddingTop: 30, backgroundColor: '#fff'
-          }}>
+          <View className="bg-white pt-[30px]" >
             <Text className="text-black text-2xl font-normal my-2">{loanEligibility.eligibility}</Text>
             <Text className="text-black text-2xl font-normal my-2">{user.account.creditScore}</Text>
             <Text className="text-black text-2xl font-normal my-2">{user.account.riskFactorScore}</Text>
