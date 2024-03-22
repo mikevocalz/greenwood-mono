@@ -130,7 +130,7 @@ export function HomeScreen() {
       <View
         className="container w-full  max-w-7xl overflow-x-clip  pt-8 px-3 mx-auto flex flex-col lg:flex-row justify-between">
         <View style={{ paddingBottom: isWeb ? 800 : 300 }}
-          className="bg-white h-screen p-8 lg:h-auto rounded-t-[30px] lg:flex-none lg:w-[70%]  w-full">
+          className="bg-white max-h-full p-8 lg:h-auto rounded-t-[30px] lg:flex-none lg:w-[70%]  w-full">
 
           <View className="flex-row justify-between w-full flex-wrap">
             <View className="md:w-[340px] md:h-[180px] max-w-420 justify-center mb-9 mt-6 bg-black px-6 py-3 rounded-2xl ">
@@ -143,19 +143,25 @@ export function HomeScreen() {
 
 
             {/* GreenWood Pay Feature */}
-            <View className="md:w-[245px] md:h-[180px] max-w-185 justify-center mb-9 mt-6 bg-black px-6 py-3 rounded-2xl ">
-              <View className="flex-row justify-end">
-                <Text className="text-[#1F9081] text-xl font-bold">Greenwood: PrepPay</Text>
+            <View className="md:w-[245px] h-[245px]  max-w-185 aspect-square justify-center mb-9 mt-6 bg-black px-6 py-3 rounded-2xl ">
+              <View className="absolute top-4 flex-row justify-end">
+                <Text className="text-[#1F9081] text-center text-xl font-bold">Greenwood: PrepPay</Text>
               </View>
               {/* Check Loan Eligibility  */}
 
               {loanEligibility.eligibility ?
-                <View className="justify-end text-xl mt-[86px] text-white flex-row font-bold ">$<Text className="text-white text-2xl font-normal mt-[2px]">{loanEligibility.loanAmount}</Text></View>
-                  ? !loanEligibility.eligibility :
+                loanEligibility.eligibility === true ?
+                  <View className="justify-end text-xl mt-[86px] text-white flex-row font-bold ">
+                    $<Text className="text-white text-2xl font-normal mt-[2px]">{loanEligibility.loanAmount}</Text>
+                  </View>
+                  :
                   <View className="justify-end text-xl mt-[86px] text-white flex-row font-bold ">
                     <Text className="text-white text-xl mt-[2px]">Not Approved</Text>
                   </View>
-                : <View className=" mt-[86px]" />
+                :
+                <View className="justify-end mt-[86px] text-white flex-row font-bold absolute bottom-4 right-4 ">
+                  <Text className="text-white text-[16px] mt-[2px] text-center">Click PrePay Button for Approval Amount</Text>
+                </View>
               }
             </View>
 
@@ -182,7 +188,7 @@ export function HomeScreen() {
               horizontal={true}
               showsHorizontalScrollIndicator={true}
               contentInsetAdjustmentBehavior="automatic"
-              contentContainerClassName="flex min-w-full h-full"
+              contentContainerClassName="flex min-w-full h-full pb-6"
             >
               <Table borderStyle={{ borderWidth: 0 }} style={{ minWidth: 400, width: '100%' }}>
                 <Row data={tablesData.tableHead} flexArr={[.8, 2, 1, 1, 1.5]} style={styles.head} textStyle={styles.text} />
