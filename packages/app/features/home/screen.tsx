@@ -130,9 +130,9 @@ export function HomeScreen() {
       <View
         className="container w-full  max-w-7xl overflow-x-clip  pt-8 px-3 mx-auto flex flex-col lg:flex-row justify-between">
         <View style={{ paddingBottom: isWeb ? 800 : 300 }}
-          className="bg-white max-h-full p-8 lg:h-auto rounded-t-[30px] lg:flex-none lg:w-[70%]  w-full">
+          className="bg-white max-h-full p-8 lg:h-auto rounded-t-[30px] lg:flex-none lg:w-[70%]  w-full ">
 
-          <View className="flex-row justify-between w-full flex-wrap">
+          <View className="flex-row justify-between w-full flex-wrap ">
             <View className="md:w-[340px] md:h-[180px] max-w-420 justify-center mb-9 mt-6 bg-black px-6 py-3 rounded-2xl ">
               <View className="flex-row justify-between">
                 <Text className="text-[#1F9081] text-xl ">Spending Account</Text>
@@ -159,8 +159,8 @@ export function HomeScreen() {
                     <Text className="text-white text-xl mt-[2px]">Not Approved</Text>
                   </View>
                 :
-                <View className="justify-end mt-[86px] text-white flex-row font-bold absolute bottom-4 right-4 ">
-                  <Text className="text-white text-[16px] mt-[2px] text-center">Click PrePay Button for Approval Amount</Text>
+                <View className="flex px-4 self-center justify-center items-center text-white flex-row font-bold absolute bottom-4 ">
+                  <Text className="text-white text-[16px] mt-[2px] text-center break-normal">Click PrePay Button for Approval Amount</Text>
                 </View>
               }
             </View>
