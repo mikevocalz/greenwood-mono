@@ -85,7 +85,7 @@ const SideBar: FC<any> = (props) => {
       ) : (
         <View
           onClick={() => setShowSidebar(!showSidebar)}
-          className="z-60 flex items-center cursor-pointer right-4 top-13"
+          className="z-60 flex items-center cursor-pointer absolute right-2 top-13"
         >
           <Icon name="menu" size={38} color="#fff" />
         </View>
